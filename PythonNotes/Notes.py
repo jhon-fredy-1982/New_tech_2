@@ -31,9 +31,15 @@ def note_register():
         notes.append(float(input(f"Ingrese la nota {i+1}: ")))
     print(notes)
     
+def notes_average():
+    if len(notes) == 0:
+        print("No hay notas registradas")
+        return
+    average = sum(notes) / len(notes)
+    print(f"El promedio de las notas es: {average}")
 
 def init_menu():
-    init = int(input("Seleccione:\n 1. Registro \n 2. Inicio de Sesión \n 3. Registrar notas \n 4. Finalizar"))
+    init = int(input("Seleccione:\n 1. Registro \n 2. Inicio de Sesión \n 3. Registrar notas \n 4. Promedio de notas \n 5. Finalizar"))
     match init:
         case 1:
             print("Registro de Usuario")
@@ -41,11 +47,13 @@ def init_menu():
         case 2: 
             print("Inicio de Sesion")
             init_session()
-
         case 3:
             print("Registra notas")
             note_register()
-        case 4: 
+        case 4:
+            print("Promedio de notas")
+            notes_average() 
+        case 5: 
             print("Finalizar")
             init = 0
             return 0
