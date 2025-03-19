@@ -25,9 +25,14 @@ def init_session():
         print("Valide sus credenciales")
         return False
     
+def note_register():
+    note_amount = int(input("Ingrese la cantidad de notas a registrar"))
+    for i in range(note_amount):
+        notes.append(float(input(f"Ingrese la nota {i+1}: ")))
+    
 
 def init_menu():
-    init = int(input("Seleccione:\n 1. Registro \n 2. Inicio de Sesión \n 3. Finalizar"))
+    init = int(input("Seleccione:\n 1. Registro \n 2. Inicio de Sesión \n 3. Registrar notas \n 4. Finalizar"))
     match init:
         case 1:
             print("Registro de Usuario")
@@ -35,7 +40,11 @@ def init_menu():
         case 2: 
             print("Inicio de Sesion")
             init_session()
-        case 3: 
+
+        case 3:
+            print("Registra notas")
+            note_register()
+        case 4: 
             print("Finalizar")
             init = 0
             return 0
