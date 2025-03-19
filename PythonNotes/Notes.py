@@ -29,6 +29,7 @@ def note_register():
     note_amount = int(input("Ingrese la cantidad de notas a registrar"))
     for i in range(note_amount):
         notes.append(float(input(f"Ingrese la nota {i+1}: ")))
+    print(notes)
     
 
 def init_menu():
